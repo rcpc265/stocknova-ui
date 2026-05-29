@@ -1,42 +1,33 @@
 # StockNova UI
 
-Frontend del ecosistema **StockNova** (sistema de control de inventario y facturación), desarrollado con las tecnologías web más modernas y escalables.
+The frontend application for the **StockNova** ecosystem, a modern stock control and invoicing system. Built with Angular, Angular Material, and Tailwind CSS.
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Tech Stack
 
-- **Core:** [Angular 20+](https://angular.dev/) (Standalone Components, Signals, OnPush Change Detection)
-- **Gestor de Paquetes:** [Bun](https://bun.sh/)
-- **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/) & [PostCSS](https://postcss.org/)
-- **Componentes de UI:** [Angular Material](https://material.angular.io/)
-- **Calidad de Código:** ESLint, Prettier
-- **Automatización de Git:** Husky & lint-staged
-- **CI/CD & Hosting:** GitHub Actions & Cloudflare Pages (despliegue continuo mediante rama `production`)
+- **Framework:** [Angular 20+](https://angular.dev/) (utilizing Standalone Components, Signals, and OnPush Change Detection)
+- **Package Manager:** [Bun](https://bun.sh/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) & [PostCSS](https://postcss.org/)
+- **UI Components:** [Angular Material](https://material.angular.io/)
+- **Code Quality:** ESLint & Prettier
+- **Git Hooks:** Husky & lint-staged
+- **CI/CD:** GitHub Actions & Cloudflare Pages
 
-## 🚀 Servidor de Desarrollo Local
+## 🚀 Getting Started
 
-Para iniciar el servidor de desarrollo local, ejecuta:
+### Development Server
+
+Run the following command to start a local development server:
 
 ```bash
 bun run start
-# o usando ng
-ng serve
 ```
 
-Una vez que el servidor esté corriendo, abre tu navegador en `http://localhost:4200/`. La aplicación se recargará automáticamente al guardar cambios en los archivos fuente.
+Navigate to `http://localhost:4200/` in your browser. The application will automatically reload if you change any of the source files.
 
-## 📦 Construcción y Despliegue
+### Build
 
-### Compilar para Producción
+To compile the application for production, run:
 
 ```bash
 bun run build
 ```
-
-Esto compilará el proyecto y almacenará los artefactos en el directorio `dist/`.
-
-### Despliegue en Cloudflare Pages
-
-El despliegue está configurado de manera automatizada:
-1. Realiza los cambios en tu rama de características (`feat/...`).
-2. Abre un Pull Request hacia la rama `main` (el CI verificará la compilación y formato del código).
-3. Una vez aprobado y fusionado en `main`, abre un Pull Request hacia la rama `production`. Al fusionarse esta última rama, Cloudflare Pages compilará y desplegará los cambios automáticamente.
