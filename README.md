@@ -1,59 +1,42 @@
-# StocknovaUi
+# StockNova UI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.26.
+Frontend del ecosistema **StockNova** (sistema de control de inventario y facturación), desarrollado con las tecnologías web más modernas y escalables.
 
-## Development server
+## 🛠️ Tecnologías Utilizadas
 
-To start a local development server, run:
+- **Core:** [Angular 20+](https://angular.dev/) (Standalone Components, Signals, OnPush Change Detection)
+- **Gestor de Paquetes:** [Bun](https://bun.sh/)
+- **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/) & [PostCSS](https://postcss.org/)
+- **Componentes de UI:** [Angular Material](https://material.angular.io/)
+- **Calidad de Código:** ESLint, Prettier
+- **Automatización de Git:** Husky & lint-staged
+- **CI/CD & Hosting:** GitHub Actions & Cloudflare Pages (despliegue continuo mediante rama `production`)
+
+## 🚀 Servidor de Desarrollo Local
+
+Para iniciar el servidor de desarrollo local, ejecuta:
 
 ```bash
+bun run start
+# o usando ng
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Una vez que el servidor esté corriendo, abre tu navegador en `http://localhost:4200/`. La aplicación se recargará automáticamente al guardar cambios en los archivos fuente.
 
-## Code scaffolding
+## 📦 Construcción y Despliegue
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Compilar para Producción
 
 ```bash
-ng generate --help
+bun run build
 ```
 
-## Building
+Esto compilará el proyecto y almacenará los artefactos en el directorio `dist/`.
 
-To build the project run:
+### Despliegue en Cloudflare Pages
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+El despliegue está configurado de manera automatizada:
+1. Realiza los cambios en tu rama de características (`feat/...`).
+2. Abre un Pull Request hacia la rama `main` (el CI verificará la compilación y formato del código).
+3. Una vez aprobado y fusionado en `main`, abre un Pull Request hacia la rama `production`. Al fusionarse esta última rama, Cloudflare Pages compilará y desplegará los cambios automáticamente.
